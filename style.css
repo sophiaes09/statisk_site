@@ -1,5 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 img {
   width: 100%;
+}
+
+p {
+  padding-block: 5px;
 }
 
 /********** index ***********/
@@ -12,11 +21,12 @@ img {
 .category {
   border: 2px solid black;
   padding: 30px;
-  width: 280px;
+  width: 300px;
   text-align: center;
   font-weight: bold;
   background-color: black;
   border-radius: 4px;
+  margin: 5px;
 }
 .category:hover {
   transform: scale(1.1);
@@ -74,6 +84,7 @@ img {
 .product_list_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
   gap: 25px;
   padding-inline: 7rem;
 }
@@ -81,12 +92,19 @@ img {
 a {
   text-decoration: none;
   color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .produkt {
+  gap: 5px;
   display: grid;
   grid-template-rows: subgrid;
   position: relative;
+  padding-bottom: 2rem;
+  grid-row: span 4;
+}
+.produkt:hover {
+  transform: scale(1.05);
 }
 
 .produkt_billede {
@@ -106,10 +124,12 @@ a {
   width: 250px;
   padding-left: 1.5rem;
   padding-bottom: 5rem;
+  padding-top: 1rem;
 }
 
 .h1_produktliste {
   padding-left: 7rem;
+  padding-bottom: 1rem;
 }
 
 .rabat_boks {
@@ -219,4 +239,18 @@ a {
 
 .produkt_billede_produktside {
   border: 2px solid #ddd;
+}
+
+.p_produktsiden {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .produktside_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 3rem;
+    padding-inline: 2rem;
+  }
 }
