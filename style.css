@@ -244,3 +244,13 @@ a {
 .p_produktsiden {
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .produktside_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 3rem;
+    padding-inline: 2rem;
+  }
+}
