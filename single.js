@@ -2,8 +2,10 @@ let productId = 1163;
 let produktside_container = document.querySelector(".produktside_container");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
-  .then((data) => {
-    produktside_container.innerHTML = `
+  .then((data) => showProduct(data));
+
+function showProduct(data) {
+  produktside_container.innerHTML = `
     <div class="billede_produktside">
                 <img class="produkt_billede_produktside" src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
                     alt="billede1">
@@ -31,4 +33,4 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                     <button class="indkøbskurv_knap">Læg i indkøbskurv</button>
                 </div>
             </div>`;
-  });
+}
