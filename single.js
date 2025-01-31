@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="da">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkt</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <header>
-        <a href="index.html">
-            <img class="logo_i_hjørnet" src="logo.png" alt="logo"></a>
-    </header>
-
-    <main>
-        <div class="produktside_container">
-            <!-- <div class="billede_produktside">
+let productId = 1163;
+let produktside_container = document.querySelector(".produktside_container");
+fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
+  .then((response) => response.json())
+  .then((data) => {
+    produktside_container.innerHTML = `
+    <div class="billede_produktside">
                 <img class="produkt_billede_produktside" src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp"
                     alt="billede1">
             </div>
             <div>
-                <h1>NIKE</h1>
-                <p class="p_produktsiden"><b>Sahara Team India Fanwear Round Neck Jersey</b></p>
-                <p class="p_produktsiden">895,00 kr.</p>
+                <h1>${data.brandname}</h1>
+                <p class="p_produktsiden"><b>${data.productdisplayname}</b></p>
+                <p class="p_produktsiden">Pris: ${data.price} kr.</p>
+                <div class="kassemedtre">
                 <p class="p_farven_blå">Farve: <b>Blå</b></p>
+                <p class="p_farven_blå"> Kategori: ${data.category}</p>
+                <p class="p_farven_blå"> Type: ${data.usagetype}</p>
+                <div/>
                 <div class="størrelses_container">
                     <div class="størrelse_dropdown_menu">
                         <label for="size"></label>
@@ -38,14 +30,5 @@
                     </div>
                     <button class="indkøbskurv_knap">Læg i indkøbskurv</button>
                 </div>
-            </div> -->
-        </div>
-
-    </main>
-
-    <footer></footer>
-
-    <script src="single.js"></script>
-</body>
-
-</html>
+            </div>`;
+  });
