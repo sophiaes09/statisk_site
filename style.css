@@ -120,6 +120,10 @@ a {
   color: #e30613;
 }
 
+.kassemedtre {
+  padding-top: 3rem;
+}
+
 .logo_i_hjørnet {
   width: 250px;
   padding-left: 1.5rem;
@@ -231,10 +235,6 @@ a {
   background-color: white;
   border: 3px solid #e30613;
   color: #000000;
-}
-
-.p_farven_blå {
-  padding-top: 3rem;
 }
 
 .produkt_billede_produktside {
