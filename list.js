@@ -1,16 +1,20 @@
+const mycategory = new URLSearchParams(window.location.search).get("category");
 const product_list_container = document.querySelector(".product_list_container");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`)
+const overskrift = document.querySelector("h1");
+overskrift.innerHTML = mycategory;
+
+fetch(`https://kea-alt-del.dk/t7/api/products/?category=${mycategory}`)
   .then((response) => response.json())
   .then((data) => showList(data));
 
 function showList(products) {
   console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `<div class="produkt">
-                <a href="produkt.html">
+  const markup = products
+    .map(
+      (product) =>
+        `<div class="produkt">
+                <a href="produkt.html?id=${product.id}">
                     <img class="produkt_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt="billede1">
                 </a>
@@ -19,8 +23,9 @@ function showList(products) {
                 <div>
                     <p>Pris: ${product.price} kr.</p>
                 </div>
-            </div>`;
-    })
+            </div>
+            `
+    )
     .join("");
   console.log(markup);
   product_list_container.innerHTML = markup;
