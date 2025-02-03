@@ -14,7 +14,7 @@ function showList(products) {
     .map(
       (product) =>
         `<div class="produkt">
-                <a href="produkt.html">
+                <a href="produkt.html?id=${product.id}">
                     <img class="produkt_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt="billede1">
                 </a>
