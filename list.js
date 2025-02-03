@@ -6,10 +6,10 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
 
 function showList(products) {
   console.log(products);
-  let markup = "";
-  products
-    .map((product) => {
-      markup += `<div class="produkt">
+  const markup = products
+    .map(
+      (product) =>
+        `<div class="produkt">
                 <a href="produkt.html">
                     <img class="produkt_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt="billede1">
@@ -19,8 +19,9 @@ function showList(products) {
                 <div>
                     <p>Pris: ${product.price} kr.</p>
                 </div>
-            </div>`;
-    })
+            </div>
+            `
+    )
     .join("");
   console.log(markup);
   product_list_container.innerHTML = markup;
