@@ -15,14 +15,17 @@ function showList(products) {
       (product) =>
         `<div class="produkt">
                 <a href="produkt.html?id=${product.id}">
-                    <img class="produkt_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
+                <div class="udsolgt_boks ${!product.soldout && "hide"}">Sold Out</div>
+                    <img class="${product.soldout && "udsolgt"} produkt_billede" src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp"
                         alt="billede1">
                 </a>
                 <h3>${product.brandname}</h3>
                 <p><b>${product.productdisplayname}</b></p>
                 <div>
-                    <p>Pris: ${product.price} kr.</p>
+                    <p class="ny_pris ${!product.discount && "hide"}">Nypris: ${Math.round(product.price * (1 - product.discount / 100))} kr.</p>
+                    <p class="pris_før2">Pris: ${product.price} kr.</p>
                 </div>
+                <div class="rabat_boks ${!product.discount && "hide"} ">${product.discount}%</div>
             </div>
             `
     )

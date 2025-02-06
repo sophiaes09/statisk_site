@@ -141,7 +141,7 @@ a {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: #e30613;
+  background: #e30612;
   color: white;
   font-size: 12px;
   font-weight: bold;
@@ -159,7 +159,7 @@ a {
   z-index: 1;
 }
 .udsolgt {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 @media screen and (max-width: 968px) {
@@ -239,10 +239,57 @@ a {
 
 .produkt_billede_produktside {
   border: 2px solid #ddd;
+  display: block;
+  width: 100%;
 }
 
 .p_produktsiden {
   font-size: 1.5rem;
+}
+
+.pris_før {
+  font-size: 1.5rem;
+  /* text-decoration: line-through;
+  color: gray; */
+}
+
+.pris_før2 {
+  font-size: 1rem;
+}
+
+.ny_pris {
+  color: #e30613;
+}
+.ny_pris2 {
+  font-size: 1.5rem;
+  color: #e30613;
+}
+
+.billede_produktside {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.rabat_boks2 {
+  display: inline-block;
+  position: absolute;
+  background: #e30613;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 23px;
+}
+
+.udsolgt_boks2 {
+  display: inline-block;
+  position: absolute;
+  justify-self: end;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 25px;
+  padding: 15px 23px;
+  z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -253,4 +300,14 @@ a {
     padding-bottom: 3rem;
     padding-inline: 2rem;
   }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  color: #000000;
+  text-decoration: line-through;
+  color: gray;
 }
